@@ -10,7 +10,6 @@
 % Suppress bibliography title
 % https://tex.stackexchange.com/a/132647
 \usepackage{etoolbox}
-\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 
 % Suppress numbers in bibliography
 % https://tex.stackexchange.com/a/35371
@@ -189,9 +188,6 @@ If all else fails, continue reading the paper --- often a difficult paragraph is
 You must choose \textbf{one} of the following papers on which to focus your research journal.
 However it is recommended that you read all of them before making your choice.
 
-\nocite{*}
-\bibliographystyle{IEEEtranS} % IEEEtranS = IEEEtran, but in alphabetical order
-\bibliography{comp110_2}
 
 %\section*{Additional Resources}
 %
