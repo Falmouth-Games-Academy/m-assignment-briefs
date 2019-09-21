@@ -47,7 +47,7 @@
 \newcommand{\@module}{COMPXXX}
 \newcommand{\module}[1]{\renewcommand{\@module}{#1}}
 
-%Allow programme to be specified
+% Allos programme to be specified
 \newcommand{\@programme}{BSc Computing for Games}
 \newcommand{\programme}[1]{\renewcommand{\@programme}{#1}}
 
