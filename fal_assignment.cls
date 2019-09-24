@@ -47,9 +47,9 @@
 \newcommand{\@module}{COMPXXX}
 \newcommand{\module}[1]{\renewcommand{\@module}{#1}}
 
-% Allow course to be specified in the preamble
-\newcommand{\@course}{MSc Artificial Intelligence for Games}
-\newcommand{\course}[1]{\renewcommand{\@course}{#1}}
+% Allos programme to be specified
+\newcommand{\@programme}{BSc Computing for Games}
+\newcommand{\programme}[1]{\renewcommand{\@programme}{#1}}
 
 % Custom maketitle command, using tikz for fancy layout
 \renewcommand{\maketitle}{%
@@ -61,7 +61,7 @@
             \parbox[t]{18cm}{\raggedleft\Huge\color{white}{\MakeUppercase{\@title}}}
         };
         \node[anchor=south east, xshift=-0.5cm, yshift=0.5cm] at (banner.south east) {
-            \parbox[t]{18cm}{\raggedleft\color{white}{Version \@version\\\@course\\\@module}}
+            \parbox[t]{18cm}{\raggedleft\color{white}{Version \@version\\\@programme\\\@module}}
         };
         \node[anchor=north west] at (banner.south west) {
             \parbox[t]{18cm}{\raggedright\color{gray}{\@author}}

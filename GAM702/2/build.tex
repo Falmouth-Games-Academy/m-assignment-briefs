@@ -6,21 +6,13 @@
 \usepackage[T1]{fontenc} % http://tex.stackexchange.com/a/17858
 \usepackage{url}
 \usepackage{todonotes}
+\usepackage{float}
 
-% Suppress bibliography title
-% https://tex.stackexchange.com/a/132647
-\usepackage{etoolbox}
-
-% Suppress numbers in bibliography
-% https://tex.stackexchange.com/a/35371
-\makeatletter
-\renewcommand\@biblabel[1]{}
-\makeatother
-
-\title{Research Journal --- Computing}
-\author{Dr Ed Powley}
-\module{COMP110}
-\version{2.0}
+\title{Development Journal}
+\author{Brian McDonald}
+\module{GAM702}
+\programme{MA Game Design}
+\version{1.0}
 
 \begin{document}
 
@@ -29,256 +21,140 @@
 \section*{Introduction}
 
 \begin{marginquote}
-  ``Computer science is not about machines, in the same way that astronomy is not about telescopes. There is an essential unity of mathematics and computer science.''
-    
-    --- Michael R.\ Fellows
-    
-    \marginquoterule
-    
-    ``The purpose of education is to destroy your confidence in your own knowledge so you will just continuously research and read and double-check and maybe someday claw your way toward a slightly more accurate understanding of the world.''
-    
-    --- Katie Mack
+"It isn't enough to pick a path—you must go down it. By doing so, you see things you couldn't possibly see when you started out; you may not like what you see, some of it may be confusing, but at least you will have, as we like to say, 'explored the neighborhood.' The key point here is that even if you decide you're in the wrong place, there is still time to head toward the right place."
+-- Ed Catmull, Creativity Inc.
+
 \end{marginquote}
 \marginpicture{flavour_pic}{
-    Ada Lovelace is considered by some to be the first ever programmer. Lovelace believed that intuition and imagination were critical to effectively applying mathematical and scientific concepts. She valued metaphysics as much as mathematics, viewing both as tools for exploring ``the unseen worlds around us''.
+    \emph{Marvel's Spider-man: PS4}, early gameplay prototype showing web traversal mechanics.
 }
 
-In this assignment, you will produce a journal detailing your research on the principles of computing.
-Your research will focus on a seminal paper in computing,
-exploring the historical context of the paper and its lasting influence on the field.
+For this assignment you will create and maintain a blog that will detail your development process during the course of the module. The goal of the blog is to capture your development process and the lessons you have learned from each prototype. This blog is not simply a review of each game, but a critical evaluation of your process and practices.
 
-Familiarity with the scientific literature is extremely helpful for the computing professional,
-both to understand the seminal works that lay the foundations of the field,
-and to keep abreast of recent developments at the cutting edge.
-Games technology is a fast-moving field, and keeping up is important.
-However scientific papers are written in a way that is sometimes daunting to newcomers,
-so it is essential to practice the skill of reading and comprehending such papers.
-Keeping a research journal is a useful way to record your thoughts
-(questions, hypotheses, connections, ideas, ...) as you explore the literature.
+You should make a minimum of \textbf{three posts per game}.
 
-This assignment is formed of several parts:
+\begin{itemize}
+	\item First post which details your initial thoughts about the brief and provides initial brainstorming
+	\item Second post, which would usually be mid-way through development which updates the reader on the progress so far
+	\item Third post, this reflects on the development of the prototype and details what you have learned so far
+\end{itemize}
 
-\begin{enumerate}[label=(\Alph*)]
-    \item \textbf{Write} a draft research journal, of at most 1500 words, that will:
-    	\begin{enumerate}[label=(\roman*)]
-    		\item \textbf{summarise} the key contributions of \textbf{one} of the papers listed below;
-    		\item \textbf{discuss} the context and influence of your chosen paper, with reference to other
-    			papers from the scientific literature;
-    		\item \textbf{list} the papers referenced, including the chosen paper,
-    			in the form of a correctly formatted bibliography in ACM or IEEE style.
-    	\end{enumerate}
-    \item \textbf{Write} the final version of your research journal, of at most 1500 words, that will:
-    	\begin{enumerate}[label=(\roman*)]
-    		\item \textbf{revise} any issues raised by your tutor and/or your peers following Part~A.
-    	\end{enumerate}
-    \item \textbf{Discuss} your research journal with the tutor in the timetabled viva session.
-\end{enumerate}
+Before the final submission you should also make a post which contains the following
 
-\subsection*{Assignment Setup}
+\begin{itemize}
+	\item A rationale of why you selected the 3 prototypes for submission
+	\item What lessons you have learned from the development of the 5 prototypes
+	\item Reflect on what you have learned as Designer
+	\item State how you would approach a hypothetical 6th prototype 
+\end{itemize}
 
-This assignment is an \textbf{academic writing task}. Fork the GitHub repository at the following URL:
+For the final submission you should provide a link to your blog, to the submission area of the assignment on the Learning Space. 
 
-\indent \url{https://github.com/Falmouth-Games-Academy/comp110-journal}
+\subsection*{Assignment Setup} 
 
-Use the existing directory structure and, as required, extend this structure with sub-directories.
-Please also ensure that you add any editor-specific files and folders to the \texttt{.gitignore} file.
+To setup your blog, you should visit the following referral link \url{https://journal.falmouth.ac.uk/?join-invite-code=990-gam702}. This will guide you
+through the creation of the blog and add you to the class list. Please ensure that you name the blog something sensible and you pick a theme which makes the blog clear and readable.
 
-\subsection*{Part A}
+This assignment consists of \textbf{five formative submissions}, followed by a \textbf{single summative submission}.
 
-Part A consists of a \textbf{single formative submission}. This work is \textbf{individual} and will be assessed on a \textbf{threshold} basis.
+After each formative submission you will receive feedback from your peers and module tutor. You should note this feedback and feed this into subsequent blog posts.  
 
-To complete Part A, read the papers listed below.
-Choose \textbf{one} of these papers to focus on for your research journal.
-Use this paper as a starting point for further reading in the scientific literature.
-Write a 1500 word document, typeset using LaTeX,
-which summarises your chosen paper and its influence on the field of computing
-with reference to the other papers you have read.
-Your report must include a bibliography of all works cited;
-it is recommended that you typeset this using BibTeX with the \texttt{IEEEtran} package.
+The formative submissions consists of adding a link to the blog on the submission area on the 
 
-Commit your work to your GitHub repository regularly.
-Bring a draft of your research journal to the timetabled review session,
-where it will be reviewed by your peers.
-You may also request feedback from the tutor at any time,
-by opening a pull request on GitHub.
-
-You will receive \textbf{immediate informal feedback}.
-
-\subsection*{Part B}
-
-Part B is a \textbf{single summative submission}. This work is \textbf{individual} and will be assessed on a \textbf{criterion-referenced} basis
-using the criteria listed in the marking rubric at the end of this document.
-
-To complete Part B, revise your report from Part~A to take into account any feedback you have received so far.
-
-Upload the compiled \texttt{.pdf} version of your journal to LearningSpace.
-Note that LearningSpace will only accept a single \texttt{.pdf} file.
-Please check the \texttt{.pdf} file carefully for errors before submission.
-
-You will receive \textbf{formal feedback} three weeks after the final deadline.
-
-\subsection*{Part C}
-
-Part C consists of a \textbf{single formative submission}. This work is \textbf{individual} and will be assessed on a \textbf{threshold} basis.
-
-To complete Part C, bring the final version of your research journal to the timetabled viva session.
-Be ready to discuss your work with the tutor.
-
-You will receive \textbf{immediate informal feedback}.
 
 \section*{Additional Guidance}
 
-The papers listed below are widely regarded as seminal works in the field of computer science.
-As with all papers, they were influenced by work that came before,
-and have influenced work that came after.
-They are decades old, but all of them have played a significant role in shaping the state of computing
-in \the\year.
-Your task is to develop an understanding of \textit{why} these papers are seminal:
-how they fit into the context of what came before,
-what they contributed to the state-of-the-art at the time they were published,
-and how they have gone on to influence subsequent thinking in the field.
 
-As much as possible you should focus your reading on peer-reviewed scholarly sources reporting primary research:
-articles in scientific workshops, conferences, journals, and some books or book chapters.
-Other sources tend to be less rigorous, and should be used only for background information
-or in cases where their use can be convincingly justified.
-It is almost never appropriate to cite Wikipedia and other similar online sources,
-although these are often useful for identifying further scholarly works.
-
-A common pitfall is to focus too much on summarising the content of the papers you have read.
-For higher marks you need to demonstrate \textbf{insight} into what you have read:
-forming inferences and analyses beyond what is written in the paper.
-Some questions you might ask yourself are:
-Why is the paper significant and/or influential?
-What is the problem it is trying to solve, and why is that problem important?
-Why did the researchers choose the approach that they did?
-Is there anything counterintuitive or surprising in the paper?
-Do you disagree with any of the assumptions or claims it makes?
-Does the paper suggest any further research questions?
-
-A related pitfall is to structure the journal as a sequence of disconnected entries.
-Instead aim to \textbf{synthesise} multiple papers into a cohesive argument,
-drawing connections between works by different authors.
-Understanding individual works is useful, but forming a holistic picture is much more valuable.
-
-Most researchers write scientific papers for the intended audience of their fellow researchers.
-Thus some papers can seem impenetrable to the novice reader.
-Don't lose heart!
-Discuss the paper with your peers.
-Follow up the papers it cites to find alternative explanations.
-If all else fails, continue reading the paper --- often a difficult paragraph is clarified by something which appears later.
 
 \section*{FAQ}
 
 \begin{itemize}
 	\item 	\textbf{What is the deadline for this assignment?} \\ 
-    		Falmouth University policy states that deadlines must only be specified on the MyFalmouth system.
+    		Falmouth University policy states that summative deadlines must only be specified on the MyFalmouth system.
     		
 	\item 	\textbf{What should I do to seek help?} \\ 
-    		You can email your tutor for informal clarifications. For informal feedback, make a pull request on GitHub. 
+    		You can email your tutor for informal clarifications.  
+    		
+	\item 	\textbf{How will I receive feedback on my work?} \\ 
+    		You will be given verbal feedback on your work during the session in which it is marked.
+    		If you require more in-depth feedback or discussion, please book an appointment with your tutor.
     		
     	\item 	\textbf{Is this a mistake?} \\ 	
-    		If you have discovered an issue with the brief itself, the source files are available at: \\
-    		\url{https://github.com/Falmouth-Games-Academy/bsc-assignment-briefs}.\\
-    		 Please make a pull request and comment accordingly.
+    		If you have discovered an issue with the brief itself, please inform the module tutor.
 \end{itemize}
 
-\section*{Reading list}
-
-You must choose \textbf{one} of the following papers on which to focus your research journal.
-However it is recommended that you read all of them before making your choice.
-
-
-%\section*{Additional Resources}
-%
-%\begin{itemize}
-%    \item Keith, C. (2010) Agile Game Development with Scrum. Pearson Education.
-%    \item http://agilemanifesto.org/
-%\end{itemize}
-
+\rubrichead{All submissions and assessment criteria for this assignment are individual.}
 \begin{markingrubric}
-%
+	%
 	\firstcriterion{Basic Competency Threshold}{40\%}
-		\gradespan{1}{\fail At least one part is missing or is unsatisfactory.}
-		\gradespan{5}{The student participated in the peer review activity,
-			with enough work available to allow a meaningful review.
-			\par The student gave a meaningful review of at least one peer's work.
-			\par The student participated in the viva, with enough work available to hold a meaningful discussion.
-			\par Sources have been cited in an appropriate manner, without any obvious errors.
-			\par There are no breaches of academic integrity.
-		}
-%
-    \criterion{Breadth of reading}{10\%}
-        \grade\fail	None of the articles listed above are referenced.
-        \par		Fewer than 2 additional sources, not listed above, are referenced.
-        \grade		One of the articles listed above is referenced.
-        \par		An additional 2 sources, not listed above, are referenced.
-        \grade		One of the articles listed above is referenced.
-        \par		An additional 5 sources, not listed above, are referenced.
-        \grade		One of the articles listed above is referenced.
-        \par		An additional 8 sources, not listed above, are referenced.
-        \grade		One of the articles listed above is referenced.
-        \par		An additional 12 sources, not listed above, are referenced.
-        \grade		One of the articles listed above is referenced.
-        \par		An additional 16 sources, not listed above, are referenced.
-%
-    \criterion{Depth of insight}{15\%}
-        \grade\fail No insight is demonstrated.
-        \par		Papers are merely paraphrased.
-        \grade		Little insight is demonstrated.
-        \par		Papers are summarised in the student's own words.
-        \grade		Some insight is demonstrated.
-        \par		Attempts are made at discussion beyond summary.
-        \grade		Much insight is demonstrated.
-        \par		Discussion is inferential in nature.
-        \grade		Considerable insight is demonstrated.
-        \par		Discussion is analytical in nature.
-        \grade		Significant insight is demonstrated.
-        \par		Discussion is analytical and evaluative in nature.
-%
-    \criterion{Specificity, verifiability \& accuracy of claims}{10\%}
-        \grade\fail 	No citations to evidence to claims.
-        \par 		Substantial errors and/or misinterpretations.
-        \grade 		Few claims have a clear source of evidence.
-        \par 		Significant errors and/or misinterpretations.
-        \grade 		Some claims have a clear source of evidence.
-        \par 		Many errors and/or misinterpretations.
-        \grade 		Many claims have a clear source of evidence.
-        \par 		Some errors and/or misinterpretations.
-        \grade 		Most claims have a clear source of evidence.
-        \par 		Few errors and/or misinterpretations.
-        \grade 		All claims have a clear source of evidence.
-        \par 		Almost no errors and/or misinterpretations.
-%
-    \criterion{Synthesis}{15\%}
-        \grade\fail No attempt has been made to synthesise information from multiple sources.
-        \grade		A superficial attempt has been made to synthesise information from multiple sources.
-        \grade		A reasonable attempt has been made to synthesise information from multiple sources.
-        \grade		Information from multiple sources is synthesised into a somewhat cohesive whole.
-        \grade		Information from multiple sources is synthesised into a cohesive whole.
-        \par		Connections are analytical in nature.
-        \grade		Information from multiple sources is synthesised into a strongly cohesive whole.
-        \par		Connections are analytical and evaluative in nature.
-%
-    \criterion{Spelling \& grammar}{5\%}
-        \grade\fail 	Substantial spelling and/or grammatical errors.
-        \grade 		Many spelling and/or grammatical errors.
-        \grade 		Some spelling and/or grammatical errors.  
-        \grade 		Few spelling and/or grammatical errors.
-        \grade 		Almost no spelling and/or grammatical errors.
-        \grade 		No spelling or grammatical errors.
-%
-    \criterion{Structure}{5\%}
-        \grade\fail 	There is no structure, or the structure is unclear.
-        \grade 		There is little structure.
-        \grade 		There is some structure.
-        \par 		A few sentences and paragraphs are well constructed.
-        \grade 		There is much structure.
-        \par 		Some sentences and paragraphs are well constructed.
-        \grade 		There is much structure, highlighting the key themes.
-        \par 		Most sentences and paragraphs are well constructed.
-        \grade 		There is much structure, highlighting the key themes.
-        \par 		All sentences and paragraphs are well constructed.
+	\gradespan{1}{\fail At least one part is missing or is inadequate.}
+	\gradespan{5}{Adequate ability to generate ideas, problem solving, concepts and proposals in response to set briefs and/or self-initiated activity.
+		\par The work demonstrates an adequate, ethically informed, real-world experience of industry/business environments and markets.
+		\par Enough work is available to hold a meaningful discussion.
+		\par Adequate participation in-class peer-review activities
+		\par No breaches of academic integrity.}
+	%
+	\criterion{Appropriateness of tools and techniques}{15\%}
+	\grade\fail 	No appropriate tools or techniques are used
+	\par 		The tools selected through out the project have not matched the challenge of the briefs.
+	\grade 		Only one tool/technique has been used throughout the project.
+	\par 		The knowledge of this tool is fairly basic.  
+	\grade 		Only one tool/technique has been used throughout the project.
+	\par 		The knowledge of this tool has advanced throughout the project.
+	\grade 		There has been a mix of two to three tools or techniques used. 
+	\par 		The knowledge of these tools/techniques are fairly basic. 
+	\par		The tools/techniques selected feel justified in terms of the game idea
+	\grade 		There has been a mix of two to three tools or techniques used.
+	\par 		The knowledge of this tool has advanced throughout the project.
+	\par		The briefs have been satisfied.     
+	\grade 		There has been a mix of two to three tools or techniques used
+	\par		The knowledge exhibited of these tools are at near expert level
+	\par		The briefs has been satisfied.
+	%
+	\criterion{Evolution of practice}{15\%}
+	\grade\fail There has no evolution of practice.
+	\par All games feel similar.
+	\grade There is little evolution of practice.
+	\par It feels like the designer hasn't properly learned from past prototypes.
+	\grade This is some evolution of practice.
+	\par There are some links in terms of lessons learned from previous projects.
+	\grade There is much evolution of practice.
+	\par There are visible direct links in terms of lessons learned from previous projects.
+	\grade Considerable evolution of practice.
+	\par Each prototype feels like a piece in a body of work.
+	\grade Significant evolution of practice.
+	\par There are clear lessons learned from each project.
+	\par Each prototype feels like a piece in a body of work.
+	%
+	\criterion{Peer Assessment}{10\%}
+	\grade\fail No engagement.
+	\par The feedback was non existent or not useful at all
+	\grade Little engagement.
+	\par The feedback is not constructive or actionable.
+	\grade Some engagement.
+	\par The feedback is useful but doesn't go into enough detail to make any real impact.
+	\grade Much engagement.
+	\par The feedback has actionable points but requires more detail to be truly useful
+	\grade Considerable engagement.
+	\par The feedback is excellent, and contains many actionable points.
+	\grade Significant engagement.
+	\par The feedback is exemplary, it is actionable, contains alternative suggestions and approaches.
+	%
+	\criterion{Creativity of the Prototypes}{20\%}
+	\grade\fail No creativity.
+	\par The work is a clone of an existing work with mere cosmetic alterations.
+	\grade Little creativity.
+	\par The work is derivative of existing works, with only minor alterations.
+	\grade Some creativity.
+	\par The work is derivative of existing works, demonstrating little divergent and/or subversive thinking.
+	\grade Much creativity.
+	\par The work is somewhat novel, demonstrating some divergent and/or subversive thinking.
+	\grade Considerable creativity.
+	\par The work is novel, demonstrating significant divergent and/or subversive thinking.
+	\grade Significant creativity.
+	\par The work is highly original, with strong evidence of divergent and/or subversive thinking.
+	%
+
 \end{markingrubric}
 
 \end{document}
