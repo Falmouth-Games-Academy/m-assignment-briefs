@@ -47,6 +47,10 @@
 \newcommand{\@module}{COMPXXX}
 \newcommand{\module}[1]{\renewcommand{\@module}{#1}}
 
+% Allow course to be specified in the preamble
+\newcommand{\@course}{MSc Artificial Intelligence for Games}
+\newcommand{\course}[1]{\renewcommand{\@course}{#1}}
+
 % Custom maketitle command, using tikz for fancy layout
 \renewcommand{\maketitle}{%
     \begin{tikzpicture}[remember picture, overlay]
@@ -57,7 +61,7 @@
             \parbox[t]{18cm}{\raggedleft\Huge\color{white}{\MakeUppercase{\@title}}}
         };
         \node[anchor=south east, xshift=-0.5cm, yshift=0.5cm] at (banner.south east) {
-            \parbox[t]{18cm}{\raggedleft\color{white}{Version \@version\\BSc Computing for Games\\\@module}}
+            \parbox[t]{18cm}{\raggedleft\color{white}{Version \@version\\\@course\\\@module}}
         };
         \node[anchor=north west] at (banner.south west) {
             \parbox[t]{18cm}{\raggedright\color{gray}{\@author}}
@@ -104,7 +108,7 @@
         \begingroup\scriptsize
             \setlength{\extrarowheight}{2pt}
             \@rubrichead
-            \begin{longtable}{|p{2.5cm}|p{1.5cm}|*{6}{p{3.4cm}|}}
+            \begin{longtable}{|p{2.5cm}|p{1.5cm}|*{\@rubricgradescount}{p{\@rubricgradewidth}|}}
                 \hline
                 \centering \textbf{\small Criterion} &
                 \centering \textbf{\small Weight} &
@@ -144,6 +148,9 @@
 	\centering \textbf{\small Novice Proficiency} &
 	\centering \textbf{\small Professional Competency}
 }
+\newcommand{\@rubricgradescount}{6}
+\newcommand{\@rubricgradewidth}{3.4cm}
+
 \newcommand{\rubricyeartwo}{\renewcommand{\@rubricgrades}{
 	\centering \cellcolor{gray!50} \textbf{\small Refer for Resubmission} &
 	\centering \textbf{\small Basic Proficiency} &
@@ -160,3 +167,10 @@
 	\centering \textbf{\small Professional Proficiency} &
 	\centering \textbf{\small Expert Competency}
 }}
+\newcommand{\rubricmasters}{\renewcommand{\@rubricgrades}{
+	\centering \cellcolor{gray!50} \textbf{\small Fail} &
+	\centering \textbf{\small Pass} &
+	\centering \textbf{\small Merit} &
+	\centering \textbf{\small Distinction}
+	}\renewcommand{\@rubricgradescount}{4}\renewcommand{\@rubricgradewidth}{5.1cm}
+}
