@@ -244,3 +244,6 @@ TSWLatexianTemp*
 *.spl
 
 COMP704/2/._2019-20-comp704-assignment-2-brief.docx
+
+# MS Office temp files
+~*
