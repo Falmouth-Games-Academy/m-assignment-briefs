@@ -1,0 +1,190 @@
+\RequirePackage{pdfmanagement-testphase}
+\DeclareDocumentMetadata{
+	pdfversion=1.7,
+}
+\documentclass{../fal_assignment}
+\graphicspath{ {../images/} }
+
+% Make it clear this is a draft
+\usepackage{draftwatermark}
+
+\usepackage{enumitem}
+\setlist{nosep} % Make enumerate / itemize lists more closely spaced
+\usepackage[T1]{fontenc} % http://tex.stackexchange.com/a/17858
+\usepackage{url}
+\usepackage{todonotes}
+\usepackage{float}
+
+\title{Application of Machine Learning}
+\input{common/moduleinfo}
+\version{0.1}
+%\programme{MSc Artificial Intelligence for Games}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+%\begin{marginquote}
+%"It isn't enough to pick a path—you must go down it. By doing so, you see things you couldn't possibly see when you started out; you may not like what you see, some of it may be confusing, but at least you will have, as we like to say, 'explored the neighborhood.' The key point here is that even if you decide you're in the wrong place, there is still time to head toward the right place."
+%-- Ed Catmull, Creativity Inc.
+%
+%\end{marginquote}
+%\marginpicture{flavour_pic}{
+%    \emph{Marvel's Spider-man: PS4}, early gameplay prototype showing web traversal mechanics.
+%}
+
+For this assignment, you will undertake a research project into Machine Learning (ML) for creating something related to video game AI. This will allow you to experiment with the ML frameworks that we will explore in the lecture and workshop sessions to create a small scale machine-learning solution that is applicable to a game-related task. This could be controlling an agent in the game world itself, some form of content generation, analysis of a game-related dataset for prediction, or something else entirely.
+
+It is recommended to look into controlling a character in a game, but the choice of project you look to develop is up to you. It is recommended that you look to minimise the scope of the project to something that you can experiment with in the time available (6 weeks). You will need to look for a project which is fairly limited in scope.
+
+This project seeks to answer two key ML questions for game-related AI:
+
+\begin{itemize}
+ \item Can ML successfully be used to complete a game-related?
+ \item How do differing parameters affect ML algorithm performance?
+\end{itemize}
+
+The goal of this assignment is to create an artefact that will demonstrate machine learning based AI.
+
+The assignment consists of the following parts:
+
+\section*{Problem definition and Data Preparation}
+The first stage of your project is to choose a suitable problem to work on and finding a suitable source of data for working with the algorithm. This could be a simple 2D game, an existing framework or set of games, or a suitable dataset and problem from the machine-learning literature.
+
+For this assignment, very well-trodden paths, such as the mnist dataset is not suitable without a good justification. For example, looking at non-standard approaches or applying the dataset in a new way. In other words, it is not acceptable to submit an agent and dataset from an, `introduction to machine learning' tutorial.
+
+Whilst you have a free reign on technology platforms, it's worth remembering that the module is taught using Python and related libraries such as AI Gym, and Scikit-Learn, however ML.Net is also available and has a similar level of functionality to Scikit-Learn. This may provide you with a suitable development route if you prefer C\# over Python.
+
+For Python game development, I would recommend PyGame, or AI Gym and for C\# development, I would recommend MonoGame. These are both lightweight and easy to use frameworks that are geared around creating small games quickly.
+
+To develop your game’s symbolic AI, you can leverage all you have learnt from COMP702. Remember, the symbolic AI will be used to create suitable training data for your ML-based training solutions. Having simple AI that is easy to modify and instrument will be of great help. For on-line learning, the game should be capable of outputting suitable data for the agent to learn from.
+
+\section*{Select suitable features}
+Many datasets (or games) have a wide variety of fields that can be used to train the machine learning algorithm. Many will not be suitable `out of the box' and will require some adjustments. You may also need to create features based on other components of the dataset for better performance.
+
+Choosing suitable features, and iterating on them is a key part of the machine-learning process. To complete this step you should investigate different features that can passed to the AI, and choose a suitable set of features to take forward into the next step. These may need to be adjusted based on the feedback from the next step. It’s also worth remembering that data collection, experimentation and interpretation are the key stages of the data science learning loop, so expect to go through this stage multiple time during the assignment.
+
+\textbf{Keep notes on what you have tried, and the results of doing so. You will need these for assignment 2}
+
+\section*{Fundamental Machine Learning experiments}
+At this stage, you are expected to experiment with the parameters of your chosen approach to evaluate your chosen algorithm parameters. You can do this via experimentation and references to the existing literature. You need to take into account the limited \textbf{time scale} for this work.
+
+To run multiple iterations of your experiment you will need to ensure that you have a fairly fast turn-around to changes that you are proposing. You should aim to start evaluation no later than week 3.
+
+\textbf{You cannot `cram' AI training the day before the deadline. It will not work.}
+
+\section*{Assignment Parts}
+The assignment consists of the following parts:
+
+\subsection*{Project Outline}
+This is a single formative submission. To complete this part of the assignment, attend the workshop in week 2 and give a short presentation which outlines your research plan. You should include material covering what game you are planning to use as a testbed and why, the key AI that you are looking to capture with ML and an outline to the data and ML processing that you are looking to use.
+
+You will receive informal feedback during the session.
+
+\subsection*{Attend progress meetings}
+This is a single formative submission that is undertaken on a weekly basis during the workshop sessions, where you will be able to discuss your research progress with your peers and with the lecturing staff.
+
+You will receive informal feedback during the session.
+
+\subsection*{Submit a demonstation video}
+This is a single summative submission. To complete this part, prepare a short (2-5 minute) video demonstrating your artefact and submit it to Microsoft streams. The link to this should be submitted via learning space, and with a link to your project's repository.
+
+Both the repository and the demonstration video must be present as part of the submission.
+
+Note that the video is intended only as a demonstration to facilitate the online viva. Advanced editing is not required – a raw screen capture from e.g. OBS is sufficient.
+
+Your submission will be assessed against the rubric at the end of this document.
+
+You will receive formal feedback within 3 weeks.
+
+\subsection*{Attend the Viva}
+This is a single summative submission. To complete this part, attend the scheduled online viva session and discuss your work. Your submission will be assessed against the rubric at the end of this document.
+
+You will receive informal feedback during the viva.
+
+\section*{Additional Guidance}
+This assignment is a research project, therefore it has fairly open goals in comparison to work that you have undertaken as an undergraduate. This means that you need to be far more in control of both what you do and when you do it. From the proposal stage, you should consider very carefully what is feasible. The important aspect about this coursework is the machine learning process; you should approach this like an experiment and document each step and iteration in the process. A common pitfall is poor planning or time management.
+
+Many students underestimate the work involved in designing and implementing projects, particularly developing AI using both symbolic and non-symbolic approaches. It simply cannot be crammed into a last-minute deluge just before a deadline. There is a critical and time-consuming phase of testing! It is, therefore, very important that you begin work early and sustain a consistent pace: little and often.
+
+\section*{FAQ}
+
+\begin{itemize}
+	\item 	\textbf{What is the deadline for this assignment?} \\ 
+    		Falmouth University policy states that summative deadlines must only be specified on the MyFalmouth system.
+    		
+	\item 	\textbf{What should I do to seek help?} \\ 
+    		You can email your tutor for informal clarifications.  
+    		
+	\item 	\textbf{How will I receive feedback on my work?} \\ 
+    		You will be given verbal feedback on your work during the session in which it is marked.
+    		If you require more in-depth feedback or discussion, please book an appointment with your tutor.
+    		
+    	\item 	\textbf{Is this a mistake?} \\ 	
+    		If you have discovered an issue with the brief itself, please inform the module tutor.
+    		
+\end{itemize}
+
+\rubricmasters
+\rubrichead{\ }
+\begin{markingrubric}
+%
+    \firstcriterion{Maintainability of data processing}{20\%}
+        \grade \fail Data processing appears ad hoc and/or difficult to follow
+        \grade Clear approach to data processing
+        	\par Some consideration to repeatability, although data processing steps may not be clear
+        \grade Clear data processing process
+            \par Some consideration given to meta-training
+            \par Some consideration given to robustness
+            \par Some consideration given to repeatability
+        \grade Clear data processing process
+            \par Much consideration given to meta-training
+            \par Robustness considerations form a core part of the solution
+            \par Repeatability considerations form a core part of the solution
+%
+    \criterion{ML Pipeline}{10\%}
+	\grade \fail There is no clear pipeline, or the program architecture is poorly considered.
+	\grade There is some attempt at a pipeline within the program, with a clear sequence of steps.
+	\grade There is a clear separation between learning/data processing and induction/`production' usage.
+	\grade Pipeline is clear, and follows industry conventions. There is evidence of evaluation/iteration over the parameters or structure (and how this has been accomplished)
+%
+    \criterion{Robustness of ML integration}{20\%}
+        \grade \fail ML solution implemented but largely non-functional / non-working
+        \grade Project implements ML functionality, but it is largely derived from off-the-shelf components
+        \grade Project implements ML functionality, with some consideration to parameter choice.
+        \grade Project implements ML functionality, with some novel or interesting insights
+%
+    \criterion{Maintainability of Solutions}{10\%}
+        \grade \fail The code submitted is hard to follow, and lacks either documentation or comments.
+        \grade The solution is documented and is reasonably easy to follow
+            \par Limited consideration for repeatability
+        \grade Game AI this is well-suited to ML approaches
+            \par Comments are clear and understandable
+            \par Good consideration for repeatability (eg, all required libraries and steps are documented in a readme)
+        \grade Game AI that incredibly well suited to ML approaches
+            \par Near industry standard level of commenting
+            \par Very good consideration for repeatability
+%
+    \criterion{Scope of ML techniques}{20\%}
+        \grade \fail little consideration of ML techniques within submission
+        \grade Some considerations for parameters and data processing
+            \par Some evidence of investigation into different AI techniques or parameters
+        \grade Reasonable consideration features, parameters, or hyper-parameters
+            \par Good evidence of investigation into different AI techniques or parameters
+        \grade  Good consideration of the chosen features, parameters, or hyper-parameters
+            \par Excellent evidence of investigation into different AI techniques or parameters
+%
+    \criterion{Suitability of chosen algorithms and topic}{20\%}
+        \grade \fail Topic chosen is not suitable for the given project.
+        \grade Topic chosen is reasonable, if poorly scoped.
+        \par Algorithm choice is reasonable for the task being considered
+        \grade Topic chosen is a good fit for the assignment, and is well scoped.
+        \par Algorithm choice is suitable for the task being considered
+        \grade Topic chosen is A good fit for the assignment, and shows an innovative approach.
+        \par Algorithm choice is informed by existing work and is well suited for the task 
+%
+\end{markingrubric}
+
+\end{document}

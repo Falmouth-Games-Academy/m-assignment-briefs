@@ -1,0 +1,159 @@
+%%
+% Converted from my essex format
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jwrfalmouth}[2020/12/08 ported from my essex script]
+
+% Beamer switch
+\newif\if@isbeamer
+\@isbeamerfalse
+\DeclareOption{beamer}{
+	\@isbeamertrue
+}
+
+\definecolor{GamesAcademyPurple}{rgb}{0.25,0.19,0.32}
+\definecolor{SubtitleGrey}{rgb}{0.9,0.9,0.9}
+\definecolor{White}{rgb}{1,1,1}
+
+\ExecuteOptions{}
+\ProcessOptions\relax
+
+% used by macros
+\RequirePackage{xstring}
+\RequirePackage{etoolbox}
+
+% Extra pretty stuff
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+
+% prefer british locale
+\RequirePackage[british]{babel}
+
+% Key Terms get extra special treatment
+\newcommand{\keyterm}[1] {\textbf{\alert{#1}}}
+\newcommand{\gametitle}[1] {\textit{#1}} 
+
+% code formatting
+\RequirePackage{listings}
+
+% Custom blocks (used for lectures)
+\RequirePackage{mdframed}
+
+% Graphics
+\RequirePackage{tikz}
+%\usetikzlibrary{fit, automata,positioning, arrows}
+
+\RequirePackage{graphicx}
+\graphicspath{{../common/images/},{images/}}
+
+% hyperlinks
+\RequirePackage{hyperref}
+
+%%
+% support version, module code and module title maros
+% Based off the assignment version :)
+%%
+
+% Allow document version to be specified, e.g. \version{1.1} in the preamble
+% Defaults to 1.0 if not specified
+\newcommand{\@version}{1.0}
+\newcommand{\version}[1]{\renewcommand{\@version}{#1}}
+
+% Allow module code to be specified, e.g. \modulecode{COMP110} in the preamble
+% Defaults to COMPXXX if not specified
+\newcommand{\@modulecode}{COMPXXX}
+\newcommand{\modulecode}[1]{\renewcommand{\@modulecode}{#1}}
+
+% allows the same file to be used with the assessments :)
+\newcommand{\module}[1]{\renewcommand{\@modulecode}{#1}}
+
+% Allow module title to be specified, e.g. \moduletitle{Introduction to Computing} in the preamble
+% Defaults to blank if not specified
+\newcommand{\@moduletitle}{}
+\newcommand{\moduletitle}[1]{\renewcommand{\@moduletitle}{#1}}
+
+% Allow session number to be specified, e.g. \sessionnumber{1} in the preamble
+% Defaults to XX if not specified
+\newcommand{\@sessionnumber}{XX}
+\newcommand{\sessionnumber}[1]{\renewcommand{\@sessionnumber}{#1}}
+
+%%
+% Beamer Configuration
+%%
+
+% Configure for beamer
+\if@isbeamer
+	\newtoggle{printable}
+	\newtoggle{housestyle}
+	
+	% probably shouldn't be messing with this
+	% but it should work as expected
+	\newcommand\changemode[1]{%
+	\gdef\beamer@currentmode{#1}}
+	
+	\subtitle{\@modulecode: \@moduletitle}
+	
+	% Different modes depending on file names
+	\IfSubStr*{\jobname}{-handout}{
+		\AtBeginDocument{
+			\changemode{handout}
+		}
+		\RequirePackage{pgfpages}
+		\setbeameroption{show notes}
+		\toggletrue{printable}
+		\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
+	}{
+	}
+
+	% Presentation slides (for pympress)
+	\IfSubStr*{\jobname}{-pres}{
+		\AtBeginDocument{
+			\changemode{second}
+		}
+		\RequirePackage{pgfpages}
+		\setbeamertemplate{note page}[plain]
+		\setbeameroption{show notes on second screen=right}
+		\togglefalse{printable}
+	}{
+	}
+	%\IfBehindSubStringEmpty{handout}{\jobname}{%
+	%}{ % Both}
+	
+	\iftoggle{housestyle}{
+		\RequirePackage{../common/beamerthemeFalmouthGamesAcademy}
+		
+		\newmdenv[frametitle=Remember, backgroundcolor=GamesAcademyPurple, fontcolor=SubtitleGrey, linecolor=SubtitleGrey]{infobox}
+		\newmdenv[frametitle=Question, backgroundcolor=GamesAcademyPurple, fontcolor=SubtitleGrey, linecolor=SubtitleGrey,frametitlefontcolor=SubtitleGrey]{questionbox}
+	}{
+		\usetheme[progressbar=frametitle,subsectionpage=progressbar]{metropolis}
+				
+		\definecolor{coolgrey2}{RGB}{208,208,206}
+		
+		\newmdenv[frametitle=Remember, backgroundcolor=coolgrey2]{infobox}
+		\newmdenv[frametitle=Question, backgroundcolor=coolgrey2]{questionbox}
+	}
+\fi
+
+% default language for code listings
+%\lstset{language=python,
+%        morekeywords={each,in,nullptr}
+%}
+
+% For strikethrough effect
+\usepackage[normalem]{ulem}
+\usepackage{wasysym}
+
+\makeatletter
+\AtEndPreamble{
+  % Need to set PDF title and author here to make sure they have been defined
+  \hypersetup{
+    pdftex,
+    pdfsubject={\@modulecode: \@moduletitle},
+    %pdfauthor=\@author,
+    pdfdisplaydoctitle,
+  }
+}
+\makeatother
+
+\endinput
